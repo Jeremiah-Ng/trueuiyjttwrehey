@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay {
+                overflow-y: auto;
+            }
+
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        #start {
+            background-color: red;
+            width: 250px;
+            border-radius: 50px;
+        }
+
+        #waiting {
+            height: 20px;
+        }
+
+        #extramilelol {
+            margin-top: 250px;
+        }
+
+    </style>
+</head>
+<title>Start</title>
+<body>
+    <center>
+        <div id="myNav" class="overlay">
+            <h3 id="extramilelol" style="color:white">Loading.</h3>
+            <img id="waiting" src="eee.gif">
+        </div>
+
+        <h1>Math Game!</h1>
+        <h4>A two player game (not compatible with two devices)</h4>
+        <button id="start" style="font-size:30px;cursor:pointer" onclick="wait()">Start</button>
+    </center>
+    <script>
+        var text = ["Loading..", "Loading...", "Loading."];
+        var counter = 0;
+        var elem = document.getElementById("extramilelol");
+        var inst = setInterval(change, 1000);
+
+        function change() {
+            elem.innerHTML = text[counter];
+            counter++;
+            if (counter >= text.length) {
+                counter = 0;
+            }
+        }
+
+        function wait() {
+            document.getElementById("myNav").style.height = "100%";
+            setTimeout(openNav, 3000);
+        }
+
+        function openNav() {
+
+            location.replace("https://jeremiah-ng.github.io/ahbfisbjafihaw/index2.html")
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+
+    </script>
+
+</body>
+
+</html>
